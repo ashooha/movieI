@@ -11,12 +11,17 @@ import web.entity.User;
 import java.util.List;
 
 
+@SuppressWarnings({"JpaQlInspection", "unchecked"})
 @Repository
 @Transactional
 public class userDaoIMP implements userDao {
 
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public userDaoIMP(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     public User getUserById(int userId){
         return (User) sessionFactory.getCurrentSession().get(User.class,userId);

@@ -11,11 +11,16 @@ import web.entity.Performance;
 
 import java.util.List;
 
+@SuppressWarnings({"JpaQlInspection", "unchecked"})
 @Repository
 public class movieDaoIMP implements movieDao {
 
+    private final SessionFactory sessionFactory;
+
     @Autowired
-    private SessionFactory sessionFactory;
+    public movieDaoIMP(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     @Override
     public Movie getMovieById(int movieId) {

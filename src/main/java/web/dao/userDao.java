@@ -1,13 +1,13 @@
 package web.dao;
 
-import web.entity.User;
+import web.entity.tUser;
 
 import java.util.List;
 
 
 public interface userDao {
-    public User getUserById(int userId);
-    public List<User> getUserByUsername(String username);
-    public List<User> userLogin(String username, String password);
-    public void saveUser(User user);
+    public tUser getUserById(int userId);
+    public List<tUser> getUserByUsername(String username);
+    public List<tUser> userLogin(String username, String password);
+    public void saveUser(tUser tUser);
 }

@@ -1,37 +1,23 @@
-package web.entity;
+package web.pageModle;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-
-import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
-@Entity
-@Table(name = "movie")
+
 public class Movie {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Column(name = "movie_name") private String movieName;
-    @Column private String director;
-    @Column private String actors;
-    @Column(name = "show_date") private Date showDate;
-    @Column private String country;
-    @Column(name = "time_length") private Double timeLength;
-    @Column private String language;
-    @Column private String intro;
-    @Column(name = "off_time") private Date offTime;
-    @Column private int heat;
-//    @Column(name = "movie_id")
-    @OneToMany(targetEntity = Performance.class)
-    @JoinColumn(name = "movie_id")
-    private List<Performance> performanceList;
-
-    @Override
-    public String toString()
-    {
-        return ToStringBuilder.reflectionToString(this);
-    }
+    private String movieName;
+    private String director;
+    private String actors;
+    private Date showDate;
+    private String country;
+    private Double timeLength;
+    private String language;
+    private String intro;
+    private Date offTime;
+    private int heat;
+    private Set<Integer> performanceIdList;
 
     public int getId() {
         return id;
@@ -121,11 +107,11 @@ public class Movie {
         this.heat = heat;
     }
 
-    public List<Performance> getPerformanceList() {
-        return performanceList;
+    public Set<Integer> getPerformanceIdList() {
+        return performanceIdList;
     }
 
-    public void setPerformanceList(List<Performance> performanceList) {
-        this.performanceList = performanceList;
+    public void setPerformanceIdList(Set<Integer> performanceIdList) {
+        this.performanceIdList = performanceIdList;
     }
 }

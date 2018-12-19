@@ -27,17 +27,17 @@
         <td>热度</td>
     </tr>
         <tr>
-            <td><c:out value="${movie.id}"/></td>
-            <td><c:out value="${movie.movieName}"/></td>
-            <td><c:out value="${movie.timeLength}"/></td>
-            <td><c:out value="${movie.country}"/></td>
-            <td><c:out value="${movie.language}"/></td>
-            <td><c:out value="${movie.director}"/></td>
-            <td><c:out value="${movie.actors}"/></td>
-            <td><c:out value="${movie.intro}"/></td>
-            <td><c:out value="${movie.showDate}"/></td>
-            <td><c:out value="${movie.offTime}"/></td>
-            <td><c:out value="${movie.heat}"/></td>
+            <td><c:out value="${tMovie.id}"/></td>
+            <td><c:out value="${tMovie.movieName}"/></td>
+            <td><c:out value="${tMovie.timeLength}"/></td>
+            <td><c:out value="${tMovie.country}"/></td>
+            <td><c:out value="${tMovie.language}"/></td>
+            <td><c:out value="${tMovie.director}"/></td>
+            <td><c:out value="${tMovie.actors}"/></td>
+            <td><c:out value="${tMovie.intro}"/></td>
+            <td><c:out value="${tMovie.showDate}"/></td>
+            <td><c:out value="${tMovie.offTime}"/></td>
+            <td><c:out value="${tMovie.heat}"/></td>
         </tr>
 </table>
 <h1>shows</h1>

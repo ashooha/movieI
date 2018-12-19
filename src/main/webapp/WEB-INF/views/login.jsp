@@ -68,13 +68,13 @@
         <h1>简易设备资产管理系统</h1>
         </div>
         <div class="formebers" >
-        <sf:form method="post" commandName="user">
+        <sf:form method="post" commandName="tUser">
             <sf:label path="username" cssErrorClass="error" cssClass="formeber">用户名</sf:label>
             <sf:input path="username" cssErrorClass="error" cssClass="formeber"/><br/>
             <sf:label path="password" cssErrorClass="error" cssClass="formeber">密码</sf:label>
             <sf:password path="password" cssErrorClass="error" cssClass="formeber"/><br/>
             <input type="submit" value="登录" class="submit" />
-            <a href="/user/register"><input type="button" value="注册" class="submit" style="float: right"/></a>
+            <a href="/tUser/register"><input type="button" value="注册" class="submit" style="float: right"/></a>
         </sf:form>
 
         </div>

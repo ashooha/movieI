@@ -6,7 +6,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import web.entity.Movie;
 import web.service.movieService;
 
 @Controller
@@ -19,6 +18,12 @@ public class movieController {
     @RequestMapping(value = "index")
     public ModelAndView getAllMovies(){
         ModelAndView mav = new ModelAndView("index");
+        return mav;
+    }
+
+    @RequestMapping(value = "listMovies")
+    public  ModelAndView listMovies(){
+        ModelAndView mav = new ModelAndView("layout/center");
         mav.addObject(movieService.getAllMovies());
         return mav;
     }

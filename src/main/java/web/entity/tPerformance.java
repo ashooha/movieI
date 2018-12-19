@@ -6,16 +6,16 @@ import java.util.Date;
 
 @Entity
 @Table(name = "performance")
-public class Performance {
+public class tPerformance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @ManyToOne(targetEntity = Movie.class)
+    @ManyToOne(targetEntity = tMovie.class)
     @JoinColumn(nullable = false,name = "movie_id")
-    private Movie movieId;
-    @ManyToOne(targetEntity = Room.class)
+    private tMovie tMovieId;
+    @ManyToOne(targetEntity = tRoom.class)
     @JoinColumn(nullable = false,name = "room_id")
-    private Room roomId;
+    private tRoom tRoomId;
     @Column private Date time;
 
     public int getId() {
@@ -26,20 +26,20 @@ public class Performance {
         this.id = id;
     }
 
-    public Movie getMovieId() {
-        return movieId;
+    public tMovie gettMovieId() {
+        return tMovieId;
     }
 
-    public void setMovieId(Movie movieId) {
-        this.movieId = movieId;
+    public void settMovieId(tMovie tMovieId) {
+        this.tMovieId = tMovieId;
     }
 
-    public Room getRoomId() {
-        return roomId;
+    public tRoom gettRoomId() {
+        return tRoomId;
     }
 
-    public void setRoomId(Room roomId) {
-        this.roomId = roomId;
+    public void settRoomId(tRoom tRoomId) {
+        this.tRoomId = tRoomId;
     }
 
     public Date getTime() {

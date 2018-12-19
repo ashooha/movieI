@@ -3,11 +3,13 @@ package web.dao.IMP;
 import org.hibernate.Hibernate;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.classic.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import web.dao.movieDao;
-import web.entity.Movie;
-import web.entity.Performance;
+import web.entity.tMovie;
+import web.entity.tPerformance;
+
 
 import java.util.List;
 
@@ -22,18 +24,23 @@ public class movieDaoIMP implements movieDao {
         this.sessionFactory = sessionFactory;
     }
 
-    @Override
-    public Movie getMovieById(int movieId) {
-        return (Movie) sessionFactory.getCurrentSession().get(Movie.class,movieId);
+
+    public Session getCurrentSession(){
+        return sessionFactory.getCurrentSession();
     }
-    public List<Movie> getAllMovies(){
-        String queryStr="from Movie";
-        Query query = sessionFactory.getCurrentSession().createQuery(queryStr);
+
+    @Override
+    public tMovie getMovieById(int movieId) {
+        return (tMovie) getCurrentSession().get(tMovie.class,movieId);
+    }
+    public List<tMovie> getAllMovies(){
+        String queryStr="from tMovie";
+        Query query = getCurrentSession().createQuery(queryStr);
         return query.list();
     }
-    public List<Performance> getMovieShows(int movidId){
-        Movie movie = getMovieById(movidId);
-        Hibernate.initialize(movie.getPerformanceList());      //????重要内容????
-        return  movie.getPerformanceList();
+    public List<tPerformance> getMovieShows(int movidId){
+        tMovie tMovie = getMovieById(movidId);
+        Hibernate.initialize(tMovie.gettPerformanceList());      //????重要内容????
+        return  tMovie.gettPerformanceList();
     }
 }

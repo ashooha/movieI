@@ -54,7 +54,7 @@
 <body style="padding-top: 50px; padding-left: 150px;">
     <h1>简易设备资产管理系统</h1>
     <div class="formebers">
-        <sf:form method="post" commandName="user">
+        <sf:form method="post" commandName="tUser">
             <sf:label path="username" cssErrorClass="error" cssClass="formeber">用户名</sf:label><sf:input path="username" cssErrorClass="error" cssClass="formeber"/><br/>
             <sf:label path="password" cssErrorClass="error" cssClass="formeber">密码</sf:label><sf:password id="p1" path="password" cssErrorClass="error" cssClass="formeber" showPassword="输入密码"/><br/>
             <sf:label path="password" cssErrorClass="error" cssClass="formeber">密码确认</sf:label><input type="password"  name="subpassword" Class="formeber" id="p2"/><br/>
@@ -62,7 +62,7 @@
             <sf:label path="tel" cssErrorClass="error" cssClass="formeber">联系电话</sf:label><sf:input path="tel" cssErrorClass="error" cssClass="formeber"/><br/>
             <sf:label path="email" cssErrorClass="error" cssClass="formeber">电子邮箱</sf:label><sf:input path="email" cssErrorClass="error" cssClass="formeber"/><br/>
             <input type="submit" value="注册" class="submit"/>
-            <a href="/user/login"><input type="button" value="取消" class="submit" style="float: right"/></a>
+            <a href="/tUser/login"><input type="button" value="取消" class="submit" style="float: right"/></a>
         </sf:form>
     </div>
 

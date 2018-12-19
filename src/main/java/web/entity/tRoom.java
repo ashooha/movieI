@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "room")
-public class Room {
+public class tRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -16,9 +16,9 @@ public class Room {
     @Column private String type;
     @Column private int sites;
 //    @Column(name = "room_id")
-    @OneToMany(targetEntity = Performance.class)
+    @OneToMany(targetEntity = tPerformance.class)
     @JoinColumn(name = "room_id")
-    private List<Performance> performanceList;
+    private List<tPerformance> tPerformanceList;
 
     @Override
     public String toString()
@@ -58,11 +58,11 @@ public class Room {
         this.sites = sites;
     }
 
-    public List<Performance> getPerformanceList() {
-        return performanceList;
+    public List<tPerformance> gettPerformanceList() {
+        return tPerformanceList;
     }
 
-    public void setPerformanceList(List<Performance> performanceList) {
-        this.performanceList = performanceList;
+    public void settPerformanceList(List<tPerformance> tPerformanceList) {
+        this.tPerformanceList = tPerformanceList;
     }
 }

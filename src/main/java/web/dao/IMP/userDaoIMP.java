@@ -2,11 +2,12 @@ package web.dao.IMP;
 
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
+import org.hibernate.classic.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import web.dao.userDao;
-import web.entity.User;
+import web.entity.tUser;
 
 import java.util.List;
 
@@ -23,20 +24,25 @@ public class userDaoIMP implements userDao {
         this.sessionFactory = sessionFactory;
     }
 
-    public User getUserById(int userId){
-        return (User) sessionFactory.getCurrentSession().get(User.class,userId);
+    public Session getCurrentSession(){
+        return sessionFactory.getCurrentSession();
     }
-    public List<User> getUserByUsername(String username){
-        String queryStr = "from User u where u.username = '" + username+"'";
-        Query query = sessionFactory.getCurrentSession().createQuery(queryStr);
-        return (List<User>)query.list();
+
+    public tUser getUserById(int userId){
+
+        return (tUser)getCurrentSession().get(tUser.class,userId);
     }
-    public List<User> userLogin(String username, String password){
-        String queryStr = "from User u Where u.username='"+username+"' and u.password='"+password+"'";
-        Query query = sessionFactory.getCurrentSession().createQuery(queryStr);
-        return (List<User>)query.list();
+    public List<tUser> getUserByUsername(String username){
+        String queryStr = "from tUser u where u.username = '" + username+"'";
+        Query query = getCurrentSession().createQuery(queryStr);
+        return (List<tUser>)query.list();
     }
-    public void saveUser(User user){
-        sessionFactory.getCurrentSession().save(user);
+    public List<tUser> userLogin(String username, String password){
+        String queryStr = "from tUser u Where u.username='"+username+"' and u.password='"+password+"'";
+        Query query = getCurrentSession().createQuery(queryStr);
+        return (List<tUser>)query.list();
+    }
+    public void saveUser(tUser tUser){
+        getCurrentSession().save(tUser);
     }
 }

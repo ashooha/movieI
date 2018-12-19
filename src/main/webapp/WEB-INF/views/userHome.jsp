@@ -14,7 +14,7 @@
 </head>
 <body>
 <h1>this is userHome</h1>
-<sf:form method="post" commandName="user">
+<sf:form method="post" commandName="tUser">
     <sf:label path="username">username:</sf:label>
     <sf:input path="username"/>
     <sf:label path="name">name:</sf:label>
